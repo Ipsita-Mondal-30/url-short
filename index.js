@@ -14,14 +14,16 @@ app.set("view engine","ejs");
 app.set("views", path.resolve("./views"))
 app.use("/",staticroute)
 
-app.get("/test",async (req,res)=>{
-    const allurls=await Url.find({});
-    return res.render("home",{
-        urls:allurls,
+app.get("/test", async (req, res) => {
+    const allUrls = await Url.find({});
+    res.render("home", {
+        urls: allUrls,
     });
+});
+
 
     
-});
+
 
 app.get("/:shortID", async (req, res) => {
     const shortID = req.params.shortID;

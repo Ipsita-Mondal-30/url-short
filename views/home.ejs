@@ -1,32 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style> 
-    body{ 
-        background-color: #c95f5f;
-        font-family: 'Times New Roman', Times, serif;
+    <style>
+        body {
+            background-color: rgb(66, 49, 113);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #f0f0f0;
+            margin: 20px;
+        }
 
-    }</style>
+        h1 {
+            text-align: center;
+            color: #f8c471;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 15px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        button {
+            background-color: #f8c471;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #d4a050;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #3b3b57;
+            border: 1px solid #fff;
+            color: #f0f0f0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4a4a6d;
+        }
+
+        tr:nth-child(even) {
+            background-color: #575782;
+        }
+
+        tr:hover {
+            background-color: #7b7bb5;
+        }
+
+        p {
+            text-align: center;
+            color: #f8c471;
+        }
+
+        a {
+            color: #eebc6d;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>URL Shortener</title>
 </head>
 <body>
-    <h1>
-        <b>URL SHORTNER</b>
-    </h1>
-    <% if (locals.id) { %>
-     <p>Url Generated: http://localhost:8000/url/<%= id %></p>
+    <h1>URL Shortener</h1>
+    <% if (id) { %>
+        <p>Your short URL: <a href="http://localhost:8000/<%= id %>">http://localhost:8000/<%= id %></a></p>
     <% } %>
-     
-    <div>
-        <form method="POST" action="/url">
-            <label for="url">Enter URL:</label>
-            <input type="text" id="Url" name="url" placeholder="Enter URL" value="http://example.com">
 
-            <button> Generate</button>
-        </form>
-    </div>
+    <form method="POST" action="/url">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url" placeholder="Enter URL">
+        <button>Generate</button>
+    </form>
+
+    <div>
+       
 </body>
 </html>
