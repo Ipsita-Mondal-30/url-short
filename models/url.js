@@ -6,8 +6,8 @@ const urlSchema = new mongoose.Schema({
     visitHistory: [
         {
             timestamp: { type: Date, default: Date.now },
-        }
-    ]
+        },
+    ],
 });
 
 const URL = mongoose.model("Url", urlSchema);

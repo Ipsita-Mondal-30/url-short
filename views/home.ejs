@@ -1,91 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+    <style> 
         body {
             background-color: rgb(66, 49, 113);
+            color: #ffffff;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: #f0f0f0;
-            margin: 20px;
-        }
-
-        h1 {
+            padding: 20px;
+            margin: 0;
             text-align: center;
-            color: #f8c471;
-            margin-bottom: 20px;
         }
-
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        
         form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin-bottom: 30px;
         }
 
-        label {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        input {
-            padding: 10px;
-            border-radius: 5px;
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            margin-right: 10px;
             border: none;
-            margin-bottom: 15px;
-            width: 80%;
-            max-width: 500px;
+            border-radius: 5px;
         }
 
         button {
-            background-color: #f8c471;
-            color: #333;
-            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            padding: 8px 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
         }
 
         button:hover {
-            background-color: #d4a050;
+            background-color: #5a4cb1;
         }
 
         table {
-            width: 90%;
-            max-width: 1000px;
+            width: 80%;
             margin: 0 auto;
             border-collapse: collapse;
-            background-color: #3b3b57;
-            border: 1px solid #fff;
-            color: #f0f0f0;
+            background-color: #403270;
+            color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th, td {
-            border: 1px solid #ddd;
             padding: 12px;
+            border: 1px solid #6a5acd;
             text-align: center;
         }
 
         th {
-            background-color: #4a4a6d;
+            background-color: #6a5acd;
         }
 
         tr:nth-child(even) {
-            background-color: #575782;
-        }
-
-        tr:hover {
-            background-color: #7b7bb5;
+            background-color: #504584;
         }
 
         p {
-            text-align: center;
-            color: #f8c471;
+            margin-bottom: 20px;
         }
 
         a {
-            color: #eebc6d;
+            color: #00ff7f;
             text-decoration: none;
         }
 
@@ -99,6 +85,7 @@
 </head>
 <body>
     <h1>URL Shortener</h1>
+
     <% if (id) { %>
         <p>Your short URL: <a href="http://localhost:8000/<%= id %>">http://localhost:8000/<%= id %></a></p>
     <% } %>
@@ -109,7 +96,5 @@
         <button>Generate</button>
     </form>
 
-    <div>
-       
 </body>
 </html>
