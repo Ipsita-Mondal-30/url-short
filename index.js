@@ -1,12 +1,27 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const path= require('path')
 const urlRoute = require("./routes/url");
 const { connecttoMongodb } = require("./connect");
 const Url = require("./models/url"); 
+const staticroute=require("./routes/staticrouter")
 const PORT = 8000;
 
 app.use(express.json());
+app.use(express.urlencoded({extended:false}))
+app.set("view engine","ejs");
+app.set("views", path.resolve("./views"))
+app.use("/",staticroute)
+
+app.get("/test",async (req,res)=>{
+    const allurls=await Url.find({});
+    return res.render("home",{
+        urls:allurls,
+    });
+
+    
+});
 
 app.get("/:shortID", async (req, res) => {
     const shortID = req.params.shortID;

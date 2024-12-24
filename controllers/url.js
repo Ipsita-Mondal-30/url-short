@@ -21,7 +21,9 @@ async function handleGenerateNewShortURL(req, res) {
         });
 
        
-        return res.status(201).json({ shortURL });
+        return res.render({
+            shortURL: shortURL
+        });
     } catch (error) {
         console.error("Error saving URL:", error.message);
         return res.status(500).json({ error: 'Internal Server Error' });
